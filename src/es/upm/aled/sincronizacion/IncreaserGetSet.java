@@ -8,11 +8,16 @@ public class IncreaserGetSet extends Increaser {
 
 	// Incrementa el contador 1.000.000 de veces
 	@Override
-	public void run() {
+	public void run() { // Al run no se le puede poner el synchronized
 		for (int i = 0; i < 1000000; i++) {
-			int count = counter.getCount();
-			count++;
-			counter.setCount(count);
+			// START Región crítica
+			synchronized(counter) { // Esta línea aisla la región crítica (un trozo de código no el método)
+				int count = counter.getCount();
+				count++;
+				counter.setCount(count);
+				// END Región crítica	
+			}
+			
 		}
 	}
 }

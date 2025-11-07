@@ -30,7 +30,7 @@ public class RaceCondition {
 		System.out.println(c2.getCount());
 		System.out.println("-------");
 	// Se "pierden" sumas porque ambos Threads suman más 1 del mismo número
-		Counter c3 = new Counter();
+		Counter c3 = new CounterMonitor();
 		Increaser i5 = new IncreaserGetSet(c3); // + 1.000.000
 		Increaser i6 = new IncreaserGetSet(c3); // + 1.000.000
 		i5.start();
