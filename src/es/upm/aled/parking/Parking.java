@@ -15,7 +15,7 @@ public class Parking {
 		// Si no, a esperar
 		// Una vez entre, aumentar cars en 1
 		try {	
-		while (cars >= capacity) {
+		while (cars >= capacity) { // SIEMPRE while(), nunca if(), hay que ser PESIMISTAS SIEMPRE
 			System.out.println("Car " + plate + " is waiting to enter.");
 				wait(); // Espero en la entrada
 				// He conseguido entrar
